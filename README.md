@@ -1,5 +1,4 @@
 # Text Analyzer 
-# Text Analyzer
 
 ## Note
 This project includes additional functionalities beyond the basic requirements, implemented for my own understanding and learning. I have used AI tools where I faced difficulties and also refined the code to match professional coding standards. If you prefer, you can follow the teacher's instructions and folow these enhancements. Already I have done these all concepts. 
