@@ -1,4 +1,3 @@
-# Text Analyzer 
 # Text Analyzer
 
 ## Note
