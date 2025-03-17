@@ -1,9 +1,9 @@
 import streamlit as st
 import re
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from collections import Counter
-from wordcloud import WordCloud
-from textstat import flesch_reading_ease
+# from wordcloud import WordCloud
+# from textstat import flesch_reading_ease
 
 # Streamlit UI Title
 st.title("📖 Text Analyzer")
