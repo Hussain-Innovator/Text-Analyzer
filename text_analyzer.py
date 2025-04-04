@@ -1,74 +1,48 @@
-# text_analyzer.py
+import streamlit as st
+import textstat
 
-def word_and_character_count(text):
-    words = text.split()
-    word_count = len(words)
-    char_count = len(text)
-    return word_count, char_count
+# UI Title
+st.title("📑 Text Analyzer")
 
-def vowel_count(text):
-    vowels = 'aeiouAEIOU'
-    count = {v: text.count(v) for v in vowels}
-    return count
+# User Input
+text = st.text_area("Enter your text here:", height=200)
 
-def search_and_replace(text, search_word, replace_word):
-    return text.replace(search_word, replace_word)
-
-def convert_case(text, to_upper=True):
-    if to_upper:
-        return text.upper()
-    else:
-        return text.lower()
-
-def average_word_length(text):
-    words = text.split()
-    total_characters = sum(len(word) for word in words)
-    if len(words) > 0:
-        return total_characters / len(words)
-    return 0
-
-def check_for_python(text):
-    return "Python" in text
-
-def main():
-    print("Welcome to the Text Analyzer!")
-    
-    # Take user input
-    text = input("Enter your text: ")
-
+if text:
     # Word and Character Count
-    word_count, char_count = word_and_character_count(text)
-    print(f"Word Count: {word_count}")
-    print(f"Character Count: {char_count}")
+    words = len(text.split())
+    chars = len(text)
 
-    # Vowel Count
-    vowel_counts = vowel_count(text)
-    print("Vowel Counts:")
-    for vowel, count in vowel_counts.items():
-        print(f"{vowel}: {count}")
+    # Vowel & Consonant Count
+    vowels = sum(1 for char in text.lower() if char in "aeiou")
+    consonants = sum(1 for char in text.lower() if char.isalpha() and char not in "aeiou")
 
-    # Average Word Length
-    avg_word_length = average_word_length(text)
-    print(f"Average Word Length: {avg_word_length:.2f}")
+    # Readability Score
+    readability = textstat.flesch_reading_ease(text)
 
-    # Search and Replace Example
-    search_word = input("Enter a word to search for: ")
-    replace_word = input("Enter a word to replace it with: ")
-    replaced_text = search_and_replace(text, search_word, replace_word)
-    print(f"Text after replacement: {replaced_text}")
+    # Display Analysis
+    st.subheader("📊 Text Analysis Results:")
+    st.write(f"🔢 **Word Count:** {words}")
+    st.write(f"🔠 **Character Count:** {chars}")
+    st.write(f"🔡 **Vowel Count:** {vowels}")
+    st.write(f"🔤 **Consonant Count:** {consonants}")
+    st.write(f"📖 **Readability Score:** {readability:.2f}")
 
-    # Convert Text to Uppercase or Lowercase
-    case_choice = input("Do you want to convert text to uppercase (Y/N)? ").lower()
-    if case_choice == 'y':
-        print("Uppercase Text: ", convert_case(text, True))
-    else:
-        print("Lowercase Text: ", convert_case(text, False))
+    # Search and Replace Feature
+    st.subheader("🔍 Find & Replace")
+    search_word = st.text_input("Word to Find:")
+    replace_word = st.text_input("Replace With:")
+    if st.button("Replace"):
+        modified_text = text.replace(search_word, replace_word)
+        st.text_area("Modified Text:", modified_text, height=200)
 
-    # Check if "Python" exists in text
-    if check_for_python(text):
-        print('The word "Python" is present in the text.')
-    else:
-        print('The word "Python" is not found in the text.')
+    # Case Conversion
+    st.subheader("🔠 Case Conversion")
+    if st.button("Convert to UPPERCASE"):
+        st.text_area("Uppercase Text:", text.upper(), height=200)
+    if st.button("Convert to lowercase"):
+        st.text_area("Lowercase Text:", text.lower(), height=200)
 
-if __name__ == "__main__":
-    main()
+    # Download Processed Text
+    st.subheader("📥 Download Processed Text")
+    st.download_button("Download as TXT", text, file_name="analyzed_text.txt")
+
