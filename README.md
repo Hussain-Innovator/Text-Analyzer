@@ -82,7 +82,7 @@ pip install -r requirements.txt
 streamlit run text_analyzer.py
 
 
-👥 Contributing
+### **👥 Contributing
 Contributions are welcome! Follow these steps:
 
 Fork the repository
@@ -93,7 +93,7 @@ Make changes and commit
 
 Submit a pull request
 
-📩 Contact
+### ** 📩 Contact
 For any queries, feel free to reach out:
 
 📧 Email: hussainsamdaniS686@gmail.com
