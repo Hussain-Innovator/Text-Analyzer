@@ -1,98 +1,62 @@
 # Text Analyzer
 
-## Note  
-This project includes additional functionalities beyond the basic requirements, implemented for my own understanding and learning. I have used AI tools where I faced difficulties and also refined the code to match professional coding standards. If you prefer, you can follow the teacher's instructions and ignore these enhancements. All concepts have already been covered.
+A simple yet feature-rich **text analysis tool** built with Python and Streamlit, designed to demonstrate core Python concepts including data types, operators, string methods, type casting, conditionals, and basic data visualization.
 
----
+> **Note**: This implementation goes beyond the basic assignment requirements. Additional features and improvements were added for deeper learning and better user experience. AI assistance was used in parts where needed, followed by manual refinement to align with professional coding practices. You may follow only the core requirements if preferred — all fundamental concepts are fully covered.
 
-## Overview  
-**Text Analyzer** is a Python-based application built with **Streamlit** that performs various text analysis functions. It was developed to demonstrate an understanding of **data types, operators, keywords, string casting, and string methods** in Python.
+## Overview
 
----
+**Text Analyzer** is a web-based application that allows users to input text and instantly view various analytical results and transformations. It serves as a practical demonstration of foundational Python programming concepts while providing a clean, interactive user interface via Streamlit.
 
-## Features  
-This Text Analyzer includes the following functionalities:
+## Features
 
-**Word & Character Count**  
-- Calculates and displays the total number of words and characters (including spaces).  
+### Core Functionality
+- Word count and character count (including spaces)
+- Vowel count (A, E, I, O, U)
+- Search and replace specific words/phrases
+- Convert text to uppercase or lowercase
+- Type casting of numeric results for clean display
+- Use of comparison operators to detect the word "Python"
+- Arithmetic operators to calculate average word length
+- Conditional logic (`if` statements) for keyword detection
 
-**Vowel Count**  
-- Identifies and counts the number of vowels (A, E, I, O, U) in the given text.  
+### Enhancements (added for improved usability and learning)
+- Modern, responsive Streamlit interface with clear sections
+- Real-time / live updates for word count, character count, and vowel count as you type
+- Detailed vowel breakdown + bar chart visualization
+- Case-sensitive / case-insensitive search & replace option
+- Instant preview of uppercase and lowercase versions
+- Average word length calculation
+- Visual feedback when the word "Python" is detected in the text
 
-**Search & Replace**  
-- Allows users to search for a specific word and replace it with another.  
+## Installation
 
-**Uppercase & Lowercase Conversion**  
-- Converts the entire text to uppercase or lowercase.  
+### Prerequisites
+- Python 3.8+
+- pip
 
-**Type Casting**  
-- Converts numerical results (word count, vowel count) into strings for formatted display.  
+### Steps
 
-**Operators Usage**  
-- Uses comparison operators to check if the text contains the word "Python".  
-- Uses arithmetic operators to calculate the average word length.  
+1. Clone the repository
 
-**Python Keywords & Conditional Checks**  
-- Implements an **if-statement** to check if "Python" exists in the text.  
+   ```bash
+   git clone https://github.com/Hussain-lnnovator/Text-Analyzer.git
 
----
+2. Project Structure
+Text-Analyzer/
+├── app.py               # Main Streamlit application
+├── requirements.txt     # Project dependencies
+├── README.md
+└── .streamlit/          # (optional) Streamlit configuration
 
-##  New Enhancements  
-This version introduces **seven major enhancements** to improve functionality and user experience:  
+Live Demo
+A deployed version is available here:
+    ```bash
+    https://text-analyzer-2bggykqraeueytjenaxocb.streamlit.app
 
-### ** Enhanced UI with Streamlit**  
-- Improved layout with structured input fields and result sections.  
-- Streamlit widgets like text input, buttons, and markdown styling enhance user experience.  
+License
+This project is open source and available under the MIT License.
 
-### ** Dynamic Word & Character Count**  
-- The app dynamically updates word and character count as the user types.  
-
-### ** Live Vowel Count with Visuals**  
-- Provides a detailed breakdown of vowels (A, E, I, O, U).  
-- Includes a **bar chart** for better visualization.  
-
-### ** Search & Replace with Case Sensitivity Toggle**  
-- Users can toggle **case sensitivity** when searching for words.  
-
-### ** Real-time Upper & Lowercase Conversion**  
-- Instantly displays converted text without extra button clicks.  
-
-### ** Average Word Length Calculation**  
-- Calculates **average word length** (total characters / total words).  
-
-### ** Python Keyword Check with Alerts**  
-- Highlights "Python" if found in the text for real-time feedback.  
-
----
-
-## 🛠 Installation  
-Follow these steps to run the project on your local machine:
-
-### ** Clone the Repository**  
-```bash
-git clone https://github.com/Hussain-lnnovator/Text-Analyzer.git
-
- Navigate to the Project Folder
-cd Text-Analyzer
-
- Install Dependencies
-pip install -r requirements.txt
-
- Run the Application
-https://text-analyzer-2bggykqraeueytjenaxocb.streamlit.app
-
-
-### ** Contributing
-Contributions are welcome! Follow these steps:
-
-Fork the repository
-
-Create a new branch
-
-Make changes and commit
-
-Submit a pull request
-
-### ** Contact
-For any queries, feel free to reach out:
- Email: hussainsamdaniS686@gmail.com
+Contact
+Hussain
+hussainsamdaniS686@gmail.com
